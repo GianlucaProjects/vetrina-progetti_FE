@@ -1,0 +1,23 @@
+.myForm {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#input-fields {
+  margin-top: 5%;
+}
+
+#main-container {
+  background-color: lightblue;
+  height:35%
+}
+
+
+.cerchio {
+  width: 50px;
+  height: 30px;
+  background-color: #3498db;
+  border-radius: 50%;
+}
