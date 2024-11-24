@@ -1,0 +1,198 @@
+/* NavbarComponent.css */
+
+/* Stile della Navbar */
+.custom-navbar {
+  background-color: #2c3e50; /* Grigio leggermente scuro */
+  padding: 1rem 1.5rem;
+}
+
+/* Nasconde il brand/logo se presente */
+.custom-navbar .navbar-brand {
+  display: none;
+}
+
+/* Stile dei Link della Navbar */
+.custom-navbar .nav-link,
+.custom-navbar .nav-link:visited {
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex; /* Utilizza Flexbox */
+  align-items: center; /* Centra verticalmente */
+  padding: 0.5rem 1rem;
+  text-decoration: none !important; /* Rimuove la sottolineatura */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #f1c40f !important; /* Giallo tenue al passaggio del mouse */
+  transform: scale(1.05);
+}
+
+/* Stile generale per le icone */
+.custom-navbar .nav-link .icon {
+  margin-right: 8px;
+  font-size: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+.custom-navbar .nav-link .icon svg {
+  display: block;
+}
+
+/* Stile dei Pulsanti */
+.custom-button {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+  display: flex; /* Utilizza Flexbox */
+  flex-direction: row; /* Disposizione orizzontale */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+  text-decoration: none !important; /* Rimuove la sottolineatura */
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  color: #f1c40f; /* Giallo tenue al passaggio del mouse */
+  text-decoration: none !important;
+  transform: scale(1.05);
+}
+
+.custom-button:focus {
+  box-shadow: none;
+  outline: none;
+  color: #f1c40f;
+}
+
+/* Rimuovi la sottolineatura da tutti i pulsanti e link */
+.custom-button,
+.custom-button:visited,
+.custom-navbar .nav-link,
+.custom-navbar .nav-link:visited,
+.custom-navbar .dropdown-item,
+.custom-navbar .dropdown-item:visited {
+  text-decoration: none !important;
+}
+
+/* Allineamento delle Icone */
+.custom-button .icon {
+  margin-right: 8px; /* Spazio tra icona e testo */
+  font-size: 1.2em; /* Dimensione dell'icona */
+  display: flex;
+  align-items: center;
+}
+
+/* Stile delle Icone nei Pulsanti */
+.custom-button svg {
+  margin-right: 8px;
+  /* Rimosso vertical-align: middle; */
+}
+
+/* Stile del Menu a Tendina */
+.custom-navbar .dropdown-menu {
+  background-color: #2980b9; /* Blu scuro per il menu */
+  border: none;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.custom-navbar .dropdown-menu.show {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-navbar .dropdown-item,
+.custom-navbar .dropdown-item:visited {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none !important; /* Rimuove la sottolineatura */
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #f1c40f; /* Giallo tenue al passaggio del mouse */
+  color: #2c3e50; /* Blu scuro */
+}
+
+/* Sezione sinistra della Navbar */
+.navbar-left {
+  margin-left: 5%; /* Margine sinistro dalla pagina */
+}
+
+/* Icona Toggle per dispositivi mobili */
+.custom-navbar .navbar-toggler {
+  border-color: #ffffff;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+}
+
+/* Miglioramenti UX/UI */
+
+/* Transizioni per i menu dropdown */
+.custom-navbar .dropdown-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Migliora la leggibilit�� del testo nei pulsanti */
+.custom-button .icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Allineamento delle Icone */
+.nav-link .icon {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.nav-item .dropdown {
+  margin-right: 10% !important;
+}
+
+.navbar-nav {
+  margin-right: 5%;
+}
+
+a .nav-link {
+  margin-left: 10% !important;
+}
+
+/* Regola il padding sui dispositivi mobili */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0.5rem;
+  }
+
+  .custom-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .custom-navbar .nav-link {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-link {
+    margin-left: 10% !important;
+  }
+
+  .navbar-left {
+    margin-left: 10px;
+  }
+}

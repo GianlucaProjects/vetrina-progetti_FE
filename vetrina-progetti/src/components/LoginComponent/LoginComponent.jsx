@@ -65,10 +65,11 @@ const LoginComponent = () => {
         const data = await response.json();
 
         if (response.ok) {
-          const { token } = data;
+          const { token, name } = data;
 
           // Salva il token nel localStorage
           localStorage.setItem("authToken", token);
+          console.log("Nome utente:", name);
 
           setSuccessMessage("Login effettuato con successo!");
           setEmail("");
@@ -78,7 +79,7 @@ const LoginComponent = () => {
           // Reindirizza l'utente alla dashboard o ad un'altra pagina
           navigate("/dashboard"); // Assicurati che la rotta /dashboard sia definita
         } else {
-          setErrorMessage(data.message || "Email o password errati. Riprova.");
+          setErrorMessage(data.message || "Email o password errati. Riprova!");
         }
       } catch (error) {
         console.error("Errore durante il login:", error);
@@ -116,8 +117,10 @@ const LoginComponent = () => {
 
         <Form.Group className="mb-4" controlId="formGroupEmail">
           <Form.Label>Email</Form.Label>
-          <div className="input-icon">
-            <i className="fas fa-envelope" aria-hidden="true"></i>
+          <div className="input-group">
+            <span className="input-group-text">
+              <i className="fas fa-envelope" aria-hidden="true"></i>
+            </span>
             <Form.Control
               type="email"
               placeholder="Inserisci la tua email"
@@ -135,8 +138,10 @@ const LoginComponent = () => {
 
         <Form.Group className="mb-4" controlId="formGroupPassword">
           <Form.Label>Password</Form.Label>
-          <div className="input-icon">
-            <i className="fas fa-lock" aria-hidden="true"></i>
+          <div className="input-group">
+            <span className="input-group-text">
+              <i className="fas fa-lock" aria-hidden="true"></i>
+            </span>
             <Form.Control
               type="password"
               placeholder="Inserisci la tua password"
