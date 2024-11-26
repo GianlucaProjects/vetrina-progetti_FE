@@ -1,11 +1,10 @@
-/* DashboardComponent.css */
 
 .dashboard-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 56px); /* Altezza completa meno l'altezza della navbar */
-  background-color: #ecf0f1; /* Sfondo chiaro per contrastare la navbar scura */
+  background-color: #e0f7fa ;
+  height: calc(100vh - 56px);
 }
 
 .dashboard-container h1 {

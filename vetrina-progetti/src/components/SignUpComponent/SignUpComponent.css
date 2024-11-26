@@ -1,3 +1,5 @@
+
+/* Importa Font Awesome per le icone */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 html, body, #root {
@@ -6,25 +8,27 @@ html, body, #root {
   padding: 0;
 }
 
+/* Reset di alcuni stili di base */
 body {
   background-color: #e0f7fa !important;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Stile del Container del Form */
 .myForm {
   max-width: 800px;
   width: 100%;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
   border-radius: 20px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   padding: 40px 30px;
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: none;
 }
 
 /* Effetto Hover sul Form */
 .myForm:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -80,6 +84,7 @@ body {
   opacity: 1;
 }
 
+/* Effetto Focus sui Campi di Input */
 .input-field:focus {
   border-color: #80deea;
   box-shadow: 0 0 8px rgba(128, 222, 234, 0.5);
@@ -157,7 +162,7 @@ body {
 }
 
 /* Stile del Bottone Personalizzato */
-.login-button {
+.signup-button {
   background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blu-viola */
   border: none;
   border-radius: 50px;
@@ -171,7 +176,7 @@ body {
   overflow: hidden;
 }
 
-.login-button::before {
+.signup-button::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -184,26 +189,26 @@ body {
   transition: all 0.5s ease;
 }
 
-.login-button:hover {
+.signup-button:hover {
   background: linear-gradient(135deg, #2575fc, #6a11cb);
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
 }
 
-.login-button:hover::before {
+.signup-button:hover::before {
   opacity: 1;
   top: -30%;
   left: -20%;
   transition: all 0.5s ease;
 }
 
-.login-button:active {
+.signup-button:active {
   transform: translateY(-1px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Stile del Bottone durante il Caricamento */
-.login-button:disabled {
+.signup-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -232,7 +237,7 @@ body {
     left: 10px;
   }
 
-  .login-button {
+  .signup-button {
     width: 100%;
     padding: 12px 0;
     font-size: 16px;
