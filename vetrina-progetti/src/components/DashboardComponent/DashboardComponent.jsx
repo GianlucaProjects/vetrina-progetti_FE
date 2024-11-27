@@ -17,7 +17,8 @@ const DashboardComponent = () => {
         },
       });
       const data = await response.json();
-      setProjects(data);
+      console.log(data.content);
+      setProjects(data.content);
     };
 
     fetchProjects();

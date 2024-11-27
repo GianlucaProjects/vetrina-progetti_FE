@@ -52,14 +52,15 @@ const LoginComponent = () => {
         const data = await response.json();
 
         if (response.ok) {
-          const { token, name } = data;
-          localStorage.setItem("authToken", token);
+          const { accessToken, name } = data;
+          localStorage.setItem("authToken", accessToken);
           localStorage.setItem("name", name);
 
           setSuccessMessage("Login effettuato con successo!");
           setEmail("");
           setPassword("");
           setErrors({});
+
           navigate("/dashboard");
         } else {
           setErrorMessage(data.message || "Email o password errati. Riprova!");

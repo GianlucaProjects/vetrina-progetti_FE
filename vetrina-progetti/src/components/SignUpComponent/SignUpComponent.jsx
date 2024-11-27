@@ -57,7 +57,7 @@ const SignUpComponent = () => {
     if (Object.keys(formErrors).length === 0) {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/users/signup", {
+        const response = await fetch("http://localhost:8080/users/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -68,6 +68,9 @@ const SignUpComponent = () => {
         const data = await response.json();
 
         if (response.ok) {
+          const { name } = data.name;
+          localStorage.setItem("name", name);
+          
           setSuccessMessage("Registrazione effettuata con successo!");
           setName("");
           setEmail("");
