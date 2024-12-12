@@ -19,10 +19,6 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.custom-navbar .nav-link:hover {
-  color: #f1c40f !important;
-  transform: scale(1.05);
-}
 
 .custom-navbar .nav-link .icon {
   margin-right: 8px;
@@ -179,10 +175,37 @@ a .nav-link {
   }
 
   .nav-link {
-    margin-left: 10% !important;
+    margin-left: 0% !important;
+  }
+
+  .responsive-navbar .navbar-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-navbar .dropdown-menu {
+    background-color: #2C3D4F;
+  }
+
+  .responsive-navbar .nav-link {
+      padding: 0.7rem 0.2rem !important;
+      text-align: center;
+  }
+
+  .responsive-navbar .nav-item {
+    width: 100%;
+  }
+
+  .responsive-navbar .nav-item .dropdown-menu {
+    width: 100%;
   }
 
   .navbar-left {
-    margin-left: 10px;
+    margin-left: 0%;
+  }
+
+  div .container-fluid {
+    --bs-gutter-x: 1rem;
   }
 }

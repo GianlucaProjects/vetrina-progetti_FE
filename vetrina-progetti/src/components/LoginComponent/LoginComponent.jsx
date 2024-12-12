@@ -53,8 +53,8 @@ const LoginComponent = () => {
 
         if (response.ok) {
           const { accessToken, name } = data;
-          localStorage.setItem("authToken", accessToken);
-          localStorage.setItem("name", name);
+          sessionStorage.setItem("authToken", accessToken);
+          sessionStorage.setItem("name", name);
 
           setSuccessMessage("Login effettuato con successo!");
           setEmail("");

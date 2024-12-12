@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Form, Container, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import NavbarComponent from "../NavbarComponent/NavbarComponent";
+import FooterComponent from "../FooterComponent/FooterComponent";
 import './ProjectFormComponent.css';
 
 const ProjectFormComponent = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [images, setImages] = useState([]);
+  const [image, setImage] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
@@ -18,15 +19,15 @@ const ProjectFormComponent = () => {
     setErrorMessage("");
     setSuccessMessage("");
 
-    const authToken = localStorage.getItem("authToken");
+    const authToken = sessionStorage.getItem("authToken");
 
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
     formData.append("category", category);
-    images.forEach((image, index) => {
-      formData.append(`images[${index}]`, image);
-    });
+    if (image) {
+      formData.append("image", image); // Aggiungi l'immagine con una chiave appropriata
+    }
 
     try {
       const response = await fetch("http://localhost:8080/projects", {
@@ -42,10 +43,11 @@ const ProjectFormComponent = () => {
         setTitle("");
         setDescription("");
         setCategory("");
-        setImages([]);
+        setImage(null);
         navigate("/dashboard");
       } else {
         const data = await response.json();
+        console.log(data);
         setErrorMessage(data.message || "Errore durante l'aggiunta del progetto. Riprova!");
       }
     } catch (error) {
@@ -55,13 +57,13 @@ const ProjectFormComponent = () => {
   };
 
   const handleImageChange = (e) => {
-    setImages(Array.from(e.target.files));
+    setImage(e.target.files[0]); // Prendi il file selezionato
   };
 
   return (
     <>
       <NavbarComponent />
-      <Container className="mt-4">
+      <Container className="mt-4 responsive-form">
         <h1>Aggiungi Nuovo Progetto</h1>
         {errorMessage && (
           <Alert variant="danger" className="text-center">
@@ -108,11 +110,11 @@ const ProjectFormComponent = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formImages">
-            <Form.Label>Immagini</Form.Label>
+          <Form.Group className="mb-3" controlId="formImage">
+            <Form.Label>Immagine</Form.Label>
             <Form.Control
               type="file"
-              multiple
+              accept="image/*"
               onChange={handleImageChange}
             />
           </Form.Group>
@@ -122,6 +124,7 @@ const ProjectFormComponent = () => {
           </Button>
         </Form>
       </Container>
+      <FooterComponent />
     </>
   );
 };

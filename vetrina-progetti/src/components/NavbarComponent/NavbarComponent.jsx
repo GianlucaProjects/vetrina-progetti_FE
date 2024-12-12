@@ -9,34 +9,33 @@ const NavbarComponent = () => {
 
   // Funzione di logout
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("name");
+    sessionStorage.removeItem("authToken");
+    sessionStorage.removeItem("name");
 
     navigate("/login");
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="custom-navbar" variant="light">
+    <Navbar collapseOnSelect expand="lg" className="custom-navbar responsive-navbar" variant="light">
       <Container fluid>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto navbar-left">
-            <Nav.Link href="#dashboard">
+            <Nav.Link href="/">
               <FaTachometerAlt className="icon" />
               <span>Dashboard</span>
             </Nav.Link>
-            <Nav.Link href="#profilo" className="me-3">
+            <Nav.Link href="/support" className="me-3">
               <FaUser className="icon" />
-              <span>Profilo</span>
+              <span>Supporto</span>
             </Nav.Link>
           </Nav>
 
           <Nav>
-            <NavDropdown className='nav-item' title={"Ciao " + localStorage.getItem("name")} id="collasible-nav-dropdown" align="end">
+            <NavDropdown className='nav-item' title={"Ciao " + sessionStorage.getItem("name")} id="collasible-nav-dropdown" align="end">
               <NavDropdown.Item href="#action1">Impostazioni</NavDropdown.Item>
-              <NavDropdown.Item href="#action2">Supporto</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item> {/* Aggiungi onClick */}
+              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

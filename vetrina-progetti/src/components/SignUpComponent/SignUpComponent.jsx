@@ -69,7 +69,7 @@ const SignUpComponent = () => {
 
         if (response.ok) {
           const { name } = data.name;
-          localStorage.setItem("name", name);
+          sessionStorage.setItem("name", name);
           
           setSuccessMessage("Registrazione effettuata con successo!");
           setName("");
