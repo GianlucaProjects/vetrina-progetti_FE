@@ -35,10 +35,10 @@ Il progetto **vetrina-progetti_FE** è un'applicazione web front-end sviluppata 
 
 1. Clonare la repository:
 2. Installare le dipendenze:
-    # cd vetrina-progetti_FE
-    # npm install
+    cd vetrina-progetti_FE
+    npm install
 3. Avviare l'applicazione:
-    # npm start
+    npm start
 
 ### Backend
-Il backend del progetto è disponibile al seguente link: github.com/GianlucaProjects/vetrina-progetti 
+Il backend del progetto è disponibile al seguente link: https://github.com/GianlucaProjects/vetrina-progetti 
