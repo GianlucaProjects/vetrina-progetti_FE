@@ -1,0 +1,9 @@
+.send-support-request {
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .support-button {
+    width: 50%;
+  }
+}

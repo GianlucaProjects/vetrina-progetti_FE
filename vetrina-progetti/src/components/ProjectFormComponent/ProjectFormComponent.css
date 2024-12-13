@@ -1,0 +1,98 @@
+/* Stile del Container del Form */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Stili per il form responsive */
+@media (max-width: 768px) {
+  button {
+    width: 15%;
+  }
+
+  .responsive-form {
+    padding: 10px;
+  }
+
+  .responsive-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .responsive-form button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .responsive-form .form-control {
+    font-size: 0.9rem;
+  }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    background-color: #2C3D4F;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+  color: white;
+  margin-bottom: 0%;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
