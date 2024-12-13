@@ -1,8 +1,8 @@
-# vetrina-progetti_FE
+# Vetrina Progetti
 
 ## Descrizione del Progetto
 
-Il progetto **vetrina-progetti_FE** è un'applicazione web front-end sviluppata in React che consente agli utenti di visualizzare e gestire i propri progetti. L'applicazione offre funzionalità di autenticazione, visualizzazione dei dettagli del progetto, modifica del profilo utente e cambio password.
+Il progetto **Vetrina Progetti** è un'applicazione web front-end sviluppata in React che consente agli utenti di visualizzare e gestire i propri progetti. L'applicazione offre funzionalità di autenticazione, visualizzazione dei dettagli del progetto, modifica del profilo utente e cambio password.
 
 ### Funzionalità Principali
 
