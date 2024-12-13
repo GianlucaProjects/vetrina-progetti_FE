@@ -33,7 +33,7 @@ const NavbarComponent = () => {
 
           <Nav>
             <NavDropdown className='nav-item' title={"Ciao " + sessionStorage.getItem("name")} id="collasible-nav-dropdown" align="end">
-              <NavDropdown.Item href="#action1">Impostazioni</NavDropdown.Item>
+              <NavDropdown.Item href="/settings">Impostazioni</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>

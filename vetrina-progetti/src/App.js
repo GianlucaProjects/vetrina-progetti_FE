@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import SupportComponent from "./components/SupportComponent/SupportComponent";
+import ProfileComponent from "./components/ProfileComponent/ProfileComponent";
 
 const App = () => {
   return (
@@ -38,6 +39,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <SupportComponent />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <PrivateRoute>
+              <ProfileComponent />
             </PrivateRoute>
           }
         />
