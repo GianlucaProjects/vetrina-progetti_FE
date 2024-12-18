@@ -23,8 +23,16 @@ button {
   background-color: lightblue !important;
 }
 
-.detail-button {
+.details-button {
+  width: auto;
+}
+
+#action-button {
   background-color: aquamarine !important;
+}
+
+#delete-button {
+  background-color: #ff6347 !important;
 }
 
 .my-table {
@@ -84,6 +92,10 @@ button {
   justify-items: center;
   margin: 0 auto;
   width: 300px;
+}
+
+.projects-div {
+  background-color: #F5F5DC;
 }
 
 @media (max-width: 768px) {
