@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, Container, Card } from "react-bootstrap";
+import { Table, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import NavbarComponent from "../NavbarComponent/NavbarComponent";
-import Alert from 'react-bootstrap/Alert';
+import Alert from "react-bootstrap/Alert";
 import "./DashboardComponent.css";
+import FooterComponent from "../FooterComponent/FooterComponent";
 
 const DashboardComponent = () => {
   const [projects, setProjects] = useState([]);
@@ -70,10 +71,13 @@ const DashboardComponent = () => {
     <>
       <NavbarComponent />
       {successMessage && (
-        <Alert variant="success" className="alert-text mt-3">{successMessage}</Alert>
+        <Alert variant="success" className="alert-text mt-3">
+          {successMessage}
+        </Alert>
       )}
       <Container className="mt-3 d-flex flex-column align-items-center">
         <h1 className="text-center mb-4">Benvenuto nella Dashboard!</h1>
+        <h4 className="text-center">Progetti</h4>
         {projects.length > 0 ? (
           <Card className="my-table d-flex justify-content-center w-100">
             <Card.Body>
@@ -94,21 +98,23 @@ const DashboardComponent = () => {
                       <td className="text-center">{project.title}</td>
                       <td className="text-center">{project.description}</td>
                       <td className="text-center">{project.category}</td>
-                      <td>
+                      <td className="text-center">
                         <Button
                           variant="info"
                           size="sm"
-                          className="me-2 detail-button"
+                          className="me-2 details-button"
+                          id="action-button"
                           onClick={() => handleViewDetails(project.id)}
                         >
                           Dettagli
                         </Button>
                       </td>
-                      <td>
+                      <td className="text-center">
                         <Button
                           variant="danger"
                           size="sm"
-                          className="me-2"
+                          className="me-2 details-button"
+                          id="delete-button"
                           onClick={() => handleDeleting(project.id)}
                         >
                           Elimina
@@ -121,7 +127,13 @@ const DashboardComponent = () => {
             </Card.Body>
           </Card>
         ) : (
-          <p className="text-center">Non ci sono progetti da visualizzare.</p>
+          <>
+            <Container className="d-flex projects-div justify-content-center mt-2">
+              <p className="text-center mb-0">
+                Non ci sono progetti da visualizzare.
+              </p>
+            </Container>
+          </>
         )}
         <div className="d-flex justify-content-center mb-3">
           <Button className="add-project mt-3" onClick={handleAddProject}>
@@ -129,6 +141,7 @@ const DashboardComponent = () => {
           </Button>
         </div>
       </Container>
+      <FooterComponent />
     </>
   );
 };

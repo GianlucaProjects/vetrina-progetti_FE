@@ -26,7 +26,7 @@ const ProjectFormComponent = () => {
     formData.append("description", description);
     formData.append("category", category);
     if (image) {
-      formData.append("image", image); // Aggiungi l'immagine con una chiave appropriata
+      formData.append("image", image);
     }
 
     try {
